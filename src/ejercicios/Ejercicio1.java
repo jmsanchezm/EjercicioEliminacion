@@ -15,12 +15,12 @@ public class Ejercicio1 {
 		}
 		
 		//Recorremos la tabla
-		for(int i =0; i < numAleatorios.length;i++) {
-			//Mientras que el módulo del números sea distinto a 2
-			while (numAleatorios [i]%2!=0) {
+		for(int i =numAleatorios.length-1; i >=0;i--) {
+			//Si el módulo del números sea distinto a 2
+			if (numAleatorios [i]%2!=0) {
 				//Se eliminarán los números impares
 				System.arraycopy(numAleatorios, i+1, numAleatorios, i, numAleatorios.length-i-1);
-				
+				numAleatorios=Arrays.copyOf(numAleatorios, numAleatorios.length-1);
 			}
 		}
 		

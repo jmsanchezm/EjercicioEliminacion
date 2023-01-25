@@ -32,9 +32,10 @@ public class Ejercicio2 {
 		//Recorremos la tabla
 				for(int i =0; i < numPrimo.length;i++) {
 					//Mientras que el módulo del números sea distinto a 2
-					while (!esPrimo(numPrimo[i])) {
+					if (!esPrimo(numPrimo[i])) {
 						//Se eliminarán los números impares
 						System.arraycopy(numPrimo, i+1, numPrimo, i, numPrimo.length-i-1);
+						numPrimo=Arrays.copyOf(numPrimo, numPrimo.length-1);
 					}
 				}
 				
